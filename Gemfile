@@ -62,3 +62,5 @@ gem 'simple_form'
 
 gem 'image_processing', '~> 1.0'
 gem 'faker'
+
+gem 'devise'
