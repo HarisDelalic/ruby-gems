@@ -18,5 +18,12 @@
       ='last_sign_in_ip'.humanize
       =user.last_sign_in_ip if user.last_sign_in_ip
   .card-footer.text-muted
+    Created
     =time_ago_in_words(user&.created_at)
     ago
+    - if user.confirmed_at.present?
+      %span.badge.rounded-pill.text-bg-success
+        Confirmed
+    - else
+      %span.badge.rounded-pill.text-bg-warning
+        Not Confirmed
