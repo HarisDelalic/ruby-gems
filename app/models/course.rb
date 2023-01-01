@@ -1,4 +1,7 @@
 class Course < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, :use => :history
+
   validates :title, presence: true
   validates :description, presence: true, length: { minimum: 5 }
 

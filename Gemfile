@@ -64,3 +64,6 @@ gem 'image_processing', '~> 1.0'
 gem 'faker'
 
 gem 'devise'
+
+# To use slugs in URLs instead of ID
+gem 'friendly_id', '~> 5.4.0'

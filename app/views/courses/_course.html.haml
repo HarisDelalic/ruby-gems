@@ -14,7 +14,7 @@
         %i.fa-regular.fa-clock
         = time_ago_in_words(course.created_at) + ' ago'
   %div.card-footer.bg-transparent.border-success
-    = link_to course_path(id: course.id), class: 'btn btn-success ms-2 me-2' do
+    = link_to course, class: 'btn btn-success ms-2 me-2' do
       %i.fa-regular.fa-eye
       Show
     = link_to edit_course_path(course), class: 'btn btn-warning ms-2 me-2' do
