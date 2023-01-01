@@ -1,0 +1,22 @@
+.card.text-center
+  .card-header
+    =user.email
+  .card-body
+    %p.card-text
+      ='sign_in_count'.humanize
+      =user.sign_in_count
+    %p.card-text
+      ='current_sign_in_at'.humanize
+      =time_ago_in_words(user.current_sign_in_at) if user.current_sign_in_at.present?
+    %p.card-text
+      ='last_sign_in_at'.humanize
+      =time_ago_in_words(user.last_sign_in_at) if user.last_sign_in_at
+    %p.card-text
+      ='current_sign_in_ip'.humanize
+      =user.current_sign_in_ip if user.current_sign_in_ip
+    %p.card-text
+      ='last_sign_in_ip'.humanize
+      =user.last_sign_in_ip if user.last_sign_in_ip
+  .card-footer.text-muted
+    =time_ago_in_words(user&.created_at)
+    ago
