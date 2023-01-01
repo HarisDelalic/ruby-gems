@@ -3,16 +3,27 @@
     %i.fa-solid.fa-book
     = course.title
   .card-body
-    %p.card-text= course.description
-    %p.card-text
-      %small.text-muted
-        %i.fa-solid.fa-chalkboard-user
-        Created by
-        = course.user&.email
-      %br
-      %small.text-muted
-        %i.fa-regular.fa-clock
-        = time_ago_in_words(course.created_at) + ' ago'
+    %p.card-text= course.short_description
+    %div.card-footer.bg-transparent.border-success
+      %p.card-text
+        %i.fa-solid.fa-globe
+        = course.language
+      %p.card-text
+        %i.fa-solid.fa-stairs
+        = course.level
+      %p.card-text
+        %i.fa-solid.fa-money-check-dollar
+        = number_to_currency(course.price) if course.price
+    %div.card-footer.bg-transparent.border-success
+      %p.card-text
+        %small.text-muted
+          %i.fa-solid.fa-chalkboard-user
+          Created by
+          = course.user&.email
+        %br
+        %small.text-muted
+          %i.fa-regular.fa-clock
+          = time_ago_in_words(course.created_at) + ' ago'
   %div.card-footer.bg-transparent.border-success
     = link_to course, class: 'btn btn-success ms-2 me-2' do
       %i.fa-regular.fa-eye
