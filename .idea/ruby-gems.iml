@@ -84,6 +84,7 @@
     <orderEntry type="library" scope="PROVIDED" name="public_activity (v2.0.2, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v5.0.1, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.6.5, RVM: ruby-3.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pundit (v2.2.0, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.6.2, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.5, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-mini-profiler (v2.3.4, RVM: ruby-3.1.1) [gem]" level="application" />
@@ -100,6 +101,7 @@
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.6.1, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v3.0.1, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.5, RVM: ruby-3.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rolify (v6.0.0, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-vips (v2.1.4, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.19.2, RVM: ruby-3.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, RVM: ruby-3.1.1) [gem]" level="application" />
@@ -139,6 +141,7 @@
       <list>
         <option value="active_record:application_record" />
         <option value="active_record:devise" />
+        <option value="active_record:rolify" />
         <option value="application_record" />
         <option value="assets" />
         <option value="benchmark" />
@@ -165,10 +168,15 @@
         <option value="mongoid:devise" />
         <option value="public_activity:migration" />
         <option value="public_activity:migration_upgrade" />
+        <option value="pundit:install" />
+        <option value="pundit:policy" />
         <option value="rack_profiler:install" />
         <option value="resource" />
         <option value="responders:install" />
         <option value="responders_controller" />
+        <option value="rolify" />
+        <option value="rolify:user" />
+        <option value="rspec:policy" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="simple_form:install" />
@@ -179,12 +187,14 @@
         <option value="test_unit:install" />
         <option value="test_unit:mailbox" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:policy" />
       </list>
     </option>
     <option name="myGenerators">
       <list>
         <option value="active_record:application_record" />
         <option value="active_record:devise" />
+        <option value="active_record:rolify" />
         <option value="application_record" />
         <option value="assets" />
         <option value="benchmark" />
@@ -211,10 +221,15 @@
         <option value="mongoid:devise" />
         <option value="public_activity:migration" />
         <option value="public_activity:migration_upgrade" />
+        <option value="pundit:install" />
+        <option value="pundit:policy" />
         <option value="rack_profiler:install" />
         <option value="resource" />
         <option value="responders:install" />
         <option value="responders_controller" />
+        <option value="rolify" />
+        <option value="rolify:user" />
+        <option value="rspec:policy" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="simple_form:install" />
@@ -225,6 +240,7 @@
         <option value="test_unit:install" />
         <option value="test_unit:mailbox" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:policy" />
       </list>
     </option>
   </component>

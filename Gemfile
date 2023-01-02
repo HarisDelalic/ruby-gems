@@ -75,3 +75,6 @@ gem 'public_activity'
 
 # Add roles to users (student, teacher, admin)
 gem "rolify"
+
+# Authorization
+gem "pundit"
