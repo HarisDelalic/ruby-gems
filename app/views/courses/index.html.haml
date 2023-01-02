@@ -2,6 +2,28 @@
 
 = link_to 'Create Course', new_course_path
 
-- @courses.each do |course|
-  = render 'courses/course', course: course
+.row
+  .col-2
+    .form-inline
+      = search_form_for @q do |f|
+        %br
+        = f.label :title
+        = f.search_field :title_cont, placeholder: 'title', class: 'form-control'
+        = f.label :short_description
+        = f.search_field :short_description_cont, placeholder: 'short description', class: 'form-control'
+        = f.label :language
+        = f.select :language_cont, Course.languages, { include_blank: true }, { class: 'form-control' }
+        = f.label :level
+        = f.select :level_cont, Course.levels, { include_blank: true }, { class: 'form-control' }
+        = f.label :price
+        = f.search_field :price_eq, placeholder: 'price', class: 'form-control'
+        = f.label :teacher_email
+        = f.search_field :user_email_cont, placeholder: 'creator email', class: 'form-control'
+
+        = f.submit
+
+    = link_to 'Refresh', courses_path
+  .col-10
+    - @courses.each do |course|
+      = render 'courses/course', course: course
 
