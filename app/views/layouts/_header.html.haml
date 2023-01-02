@@ -13,10 +13,11 @@
           = link_to courses_path, class: 'nav-link' do
             .fa.fa-book
             Courses
-        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
-          = link_to users_path, class: 'nav-link' do
-            .fas.fa-users
-            Users
+        - if current_user.has_role?(:admin)
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+            = link_to users_path, class: 'nav-link' do
+              .fas.fa-users
+              Users
         -#Collected with public activity gem
         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(activities_path)}"}
           = link_to activities_path, class: 'nav-link' do

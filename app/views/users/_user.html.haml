@@ -31,4 +31,4 @@
     -user.roles.each do |role|
       .badge.bg-success
         =role.name
-    =link_to 'Update User Roles', edit_user_path(user)
+    =link_to 'Update User Roles', edit_user_path(user), class: 'ms-2 btn btn-sm btn-warning'
