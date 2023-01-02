@@ -1,4 +1,12 @@
 %h1 Users
 
+.form-inline
+  = search_form_for @q do |f|
+    %br
+    = f.label :email_cont
+    = f.search_field :email_cont, placeholder: 'email'
+
+    = f.submit
+
 - @users.each do |user|
   = render 'users/user', user: user
