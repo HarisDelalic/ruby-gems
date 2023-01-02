@@ -17,6 +17,11 @@
           = link_to users_path, class: 'nav-link' do
             .fas.fa-users
             Users
+        -#Collected with public activity gem
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(activities_path)}"}
+          = link_to activities_path, class: 'nav-link' do
+            .fa-solid.fa-bell
+            Activities
       %ul.navbar-nav.mr-right
         .form-check-inline.my-2.my-lg-0
           = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|

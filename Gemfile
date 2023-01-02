@@ -69,3 +69,6 @@ gem 'devise'
 gem 'friendly_id', '~> 5.4.0'
 
 gem 'ransack'
+
+# To track activities
+gem 'public_activity'
