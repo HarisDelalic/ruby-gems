@@ -28,9 +28,11 @@
     = link_to course, class: 'btn btn-success ms-2 me-2' do
       %i.fa-regular.fa-eye
       Show
-    = link_to edit_course_path(course), class: 'btn btn-warning ms-2 me-2' do
-      %i.fa-regular.fa-pen-to-square
-      Edit
-    = link_to course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger ms-2 me-2' do
-      %i.fa-regular.fa-trash-can
-      Delete
+    - if policy(course).edit?
+      = link_to edit_course_path(course), class: 'btn btn-warning ms-2 me-2' do
+        %i.fa-regular.fa-pen-to-square
+        Edit
+    - if policy(course).destroy?
+      = link_to course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger ms-2 me-2' do
+        %i.fa-regular.fa-trash-can
+        Delete

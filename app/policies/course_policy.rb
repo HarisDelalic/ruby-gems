@@ -1,6 +1,5 @@
 class CoursePolicy < ApplicationPolicy
   def edit?
-    @user.has_role?(:admin)
     @user.has_role?(:admin) || is_owner
   end
 
@@ -30,6 +29,6 @@ class CoursePolicy < ApplicationPolicy
   private
 
   def is_owner
-    @record.user = @user
+    @record.user == @user
   end
 end
