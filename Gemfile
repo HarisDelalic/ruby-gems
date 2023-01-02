@@ -72,3 +72,6 @@ gem 'ransack'
 
 # To track activities
 gem 'public_activity'
+
+# Add roles to users (student, teacher, admin)
+gem "rolify"

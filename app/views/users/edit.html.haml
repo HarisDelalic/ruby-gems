@@ -1,0 +1,14 @@
+User:
+=@user.email
+
+%p
+.card
+  .card-header
+    Update User Roles
+  .card-body
+    = simple_form_for @user do |f|
+      = f.collection_check_boxes :role_ids, Role.all, :id, :name, item_label_class: 'ms-1 me-3'
+      %p
+      = f.button :submit
+  .card-footer
+    = link_to 'Cancel', users_path

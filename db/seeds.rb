@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(email: 'test@test.com', password: 'Password1')
+user = User.create!(email: 'test@test.com', password: 'Password1')
+
+user.add_role :admin
+user.confirmed_at = Time.now
 
 30.times do
   Course.create(title: Faker::Educator.course_name,

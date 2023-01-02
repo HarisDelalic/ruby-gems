@@ -27,3 +27,8 @@
     - else
       %span.badge.rounded-pill.text-bg-warning
         Not Confirmed
+  .card-footer
+    -user.roles.each do |role|
+      .badge.bg-success
+        =role.name
+    =link_to 'Update User Roles', edit_user_path(user)
