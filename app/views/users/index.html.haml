@@ -1,4 +1,7 @@
-%h1 Users
+%h2
+  Users:
+  %span.badge.text-bg-secondary
+    =@users.count
 
 .form-inline
   = search_form_for @q do |f|

@@ -20,3 +20,8 @@
 .form-control.is-invalid {
     background-image: none !important;
 }
+
+.nav-link {
+    color: white !important;
+    font-size: 14px !important;
+}

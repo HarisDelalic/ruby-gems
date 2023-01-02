@@ -4,15 +4,20 @@
 
   .p-4
 
-  .form-inline.my-2.my-lg-0
-    = form_tag(courses_path, method: :get) do
+  - if current_user.present?
+    .form-inline.my-2.my-lg-0
+    = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
       .input-group
-        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
-        %span.input-group-append
-          %button.btn.btn-primary.btn-sm{:type => "submit"}
-            %span.fa.fa-search{"aria-hidden" => "true"}
+        .row
+          .col-11
+            = f.search_field :title_cont, placeholder: 'Search by Course Title', class: 'form-control'
+          .col-1
+            %span.input-group-append
+              %button.btn.btn-primary.btn-sm{:type => "submit"}
+                %span.fa.fa-search{"aria-hidden" => "true"}
 
 -#methods like Course.all are not to be placed in views - refactor!
+%p
 .card-group
   .card.card-body
     %h1

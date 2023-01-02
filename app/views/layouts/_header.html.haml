@@ -22,15 +22,18 @@
           = link_to activities_path, class: 'nav-link' do
             .fa-solid.fa-bell
             Activities
-      %ul.navbar-nav.mr-right
+      %ul.navbar-nav.ms-auto.mb-2.me-5
         .form-check-inline.my-2.my-lg-0
           = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
             = f.search_field :title_cont, placeholder: 'Search by Course Title', class: 'form-control'
-      %ul.navbar-nav.mr-right
-        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
-          = link_to root_path, class: 'nav-link' do
-            .fa.fa-home
-            Another link
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(activities_path)}"}
+          = link_to activities_path, class: 'nav-link' do
+            .fa-solid.fa-bell
+            Activities
+        -#%li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+        -#  = link_to root_path, class: 'nav-link' do
+        -#    .fa.fa-home
+        -#    Another link
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", href: "#", role: "button"}
             %b= current_user.email
