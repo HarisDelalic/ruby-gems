@@ -23,4 +23,8 @@ class User < ApplicationRecord
       self.add_role(:teacher) #if you want any user to be able to create own courses
     end
   end
+
+  def online?
+    updated_at > 2.minutes.ago
+  end
 end

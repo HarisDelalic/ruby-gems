@@ -1,5 +1,9 @@
 .card.text-center
   .card-header
+    - if user.online?
+      .fa-solid.fa-circle.text-success
+    - else
+      .fa-solid.fa-circle.text-danger
     = link_to user.email, user_path(user)
   .card-body
     %p.card-text
