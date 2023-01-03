@@ -1,6 +1,6 @@
 .card.text-center
   .card-header
-    =user.email
+    = link_to user.email, user_path(user)
   .card-body
     %p.card-text
       ='sign_in_count'.humanize
