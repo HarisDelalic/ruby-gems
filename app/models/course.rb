@@ -11,6 +11,7 @@ class Course < ApplicationRecord
   has_rich_text :description
 
   belongs_to :user
+  has_many :lessons
 
   LANGUAGES = [:English, :German, :Bosnian]
   def self.languages

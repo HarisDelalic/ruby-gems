@@ -1,0 +1,7 @@
+%p#notice= notice
+
+= render 'lessons/lesson', lesson: @lesson
+
+= link_to 'Edit', edit_lesson_path(@lesson)
+\|
+= link_to 'Back', course_path(@lesson.course)
