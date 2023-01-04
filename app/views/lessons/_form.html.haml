@@ -6,8 +6,8 @@
   .form-inputs
     = f.input :title
     = f.input :content
-    = f.label :course_id
-    = f.select :course_id, Course.all.map { |course| [course.title, course.id] }, { include_blank: true }, { class: 'form-control' }
+    = f.input :course_id, input_html: { value: @lesson.course_id || params[:course_id]}, as: :hidden
+
 
   %br
   .form-actions
