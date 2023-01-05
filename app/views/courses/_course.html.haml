@@ -25,7 +25,7 @@
           %i.fa-solid.fa-book
           Lessons count:
           = course.lessons.count
-          = link_to 'Add Lesson', new_lesson_path(course_id: course.id)
+          = link_to 'Add Lesson', new_course_lesson_path(course_id: course.id)
         %br
         %small.text-muted
           %i.fa-regular.fa-clock

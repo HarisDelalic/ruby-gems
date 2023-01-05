@@ -1,6 +1,6 @@
 .card.m-3
   .card-header
-    = link_to lesson.title, lesson
+    = link_to lesson.title, course_lesson_path(course_id: lesson.course_id, id: lesson.id)
   - if policy(lesson).show?
     .card-body
       Content:
@@ -9,5 +9,5 @@
     = link_to lesson.course&.title, course_path(lesson.course)
   - if policy(lesson).edit?
     .card-footer
-      = link_to 'Edit', edit_lesson_path(lesson), class: 'btn btn-sm btn-warning'
-      = link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
+      = link_to 'Edit', edit_course_lesson_path(course_id: lesson.course_id, id: lesson.id), class: 'btn btn-sm btn-warning'
+      = link_to 'Destroy', course_lesson_path(course_id: lesson.course_id, id: lesson.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'

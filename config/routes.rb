@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :lessons
+  # resources :lessons
   devise_for :users
   resources :users, only: [:index, :edit, :show, :update]
-  resources :courses
+  resources :courses do
+    resources :lessons
+  end
   resources :activities, only: [:index]
   root to: "static_pages#landing_page"
   get 'privacy_policy', to: "static_pages#privacy_policy"
