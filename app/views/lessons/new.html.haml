@@ -1,5 +1,8 @@
-%h1 New lesson
-
-= render 'form'
-
-= link_to 'Back', course_lessons_path(course_id: @course.id)
+%br
+  .card
+    .card-header
+      %h1 New lesson
+    .card-body
+      = render 'form'
+    .card-footer
+      = link_to 'Back to course', course_path(@course)
