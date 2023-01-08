@@ -1,9 +1,11 @@
 .card.m-3
   .card-header
-    = link_to lesson.title, course_lesson_path(lesson.course, lesson)
+    .far.fa-check-square
+    = link_to course_lesson_path(lesson.course, lesson) do
+      lesson.title
+
   - if policy(lesson).show?
     .card-body
-      Content:
       = lesson.content
     %br
     = link_to lesson.course&.title, course_path(lesson.course)

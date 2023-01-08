@@ -1,7 +1,13 @@
+= link_to 'Courses', courses_path
+\/
+= link_to @course.title, course_path(@course)
+\/ New
+
 %br
   .card
     .card-header
-      %h1 New lesson
+      %h3
+        Editing lesson
     .card-body
       = render 'form'
     .card-footer

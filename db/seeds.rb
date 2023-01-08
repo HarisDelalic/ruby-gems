@@ -9,7 +9,7 @@
 user = User.create!(email: 'test@test.com', password: 'Password1')
 
 user.add_role :admin
-user.confirmed_at = Time.now
+user.skip_confirmation!
 
 30.times do
   Course.create(title: Faker::Educator.course_name,
