@@ -78,3 +78,5 @@ gem "rolify"
 
 # Authorization
 gem "pundit"
+
+gem 'pagy', '~> 6.0' # omit patch digit

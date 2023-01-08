@@ -27,6 +27,12 @@
 
     = link_to 'Refresh', courses_path
   .col-10
+    #div.m-3
+      != pagy_bootstrap_nav(@pagy)
+
     - @courses.each do |course|
       = render 'courses/course', course: course
+
+    #div.m-3
+      != pagy_bootstrap_nav(@pagy)
 

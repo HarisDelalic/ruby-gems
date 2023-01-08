@@ -11,6 +11,8 @@ user = User.create!(email: 'test@test.com', password: 'Password1')
 user.add_role :admin
 user.skip_confirmation!
 
+# do not create activities on running seeds
+PublicActivity.enabled=false
 30.times do
   Course.create(title: Faker::Educator.course_name,
                 description: Faker::Lorem.paragraph(sentence_count: 2),
@@ -20,3 +22,4 @@ user.skip_confirmation!
                 level: 'All Levels',
                 price: Faker::Number.between(from: 1000, to: 20000))
 end
+PublicActivity.enabled=false
