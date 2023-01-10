@@ -1,3 +1,8 @@
+- content_for :title do
+  e-learning
+  \|
+  All activities
+
 %h2
   Activities:
   %span.badge.text-bg-secondary
@@ -11,16 +16,3 @@
       =activity.trackable_id
       =activity.owner_type
       =activity.owner_id
--#  <li class="list-group-item">An item</li>
--#  <li class="list-group-item">A second item</li>
--#  <li class="list-group-item">A third item</li>
--#  <li class="list-group-item">A fourth item</li>
--#  <li class="list-group-item">And a fifth one</li>
--#</ul>
--#- @activities.each do |activity|
--#  .row
--#    =activity.id
--#    =activity.trackable_type
--#    =activity.trackable_id
--#    =activity.owner_type
--#    =activity.owner_id

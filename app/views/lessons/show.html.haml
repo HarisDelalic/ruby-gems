@@ -1,3 +1,11 @@
+- content_for :title do
+  e-learning
+  \|
+  =@course.title
+  \|
+  Edit
+  =@lesson.title
+
 %p#notice= notice
 
 = link_to 'Courses', courses_path
