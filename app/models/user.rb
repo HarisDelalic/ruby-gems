@@ -10,6 +10,7 @@ class User < ApplicationRecord
   friendly_id :email, use: :slugged
 
   has_many :courses
+  has_many :enrollments
 
   after_create :assign_default_role
 
@@ -22,6 +23,10 @@ class User < ApplicationRecord
       self.add_role(:student) if self.roles.blank?
       self.add_role(:teacher) #if you want any user to be able to create own courses
     end
+  end
+
+  def to_s
+    email
   end
 
   def online?

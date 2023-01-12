@@ -18,6 +18,10 @@
             = link_to users_path, class: 'nav-link' do
               .fas.fa-users
               Users
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(enrollments_path)}"}
+          = link_to enrollments_path, class: 'nav-link' do
+            .fa-solid.fa-lock-open
+            Enrollments
         -#Collected with public activity gem
         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(activities_path)}"}
           = link_to activities_path, class: 'nav-link' do

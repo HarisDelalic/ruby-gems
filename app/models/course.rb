@@ -12,6 +12,7 @@ class Course < ApplicationRecord
 
   belongs_to :user
   has_many :lessons
+  has_many :enrollments
 
   LANGUAGES = [:English, :German, :Bosnian]
   def self.languages
@@ -21,5 +22,9 @@ class Course < ApplicationRecord
   LEVELS = [:"All Levels", :Beginner, :Intermediate, :Advanced]
   def self.levels
     LEVELS.map{|level| [level, level]}
+  end
+
+  def to_s
+    title
   end
 end
