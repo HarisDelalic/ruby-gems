@@ -25,6 +25,10 @@ class User < ApplicationRecord
     end
   end
 
+  def enroll(course)
+    self.enrollments.create(course: course, price: course.price)
+  end
+
   def to_s
     email
   end

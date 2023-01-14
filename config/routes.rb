@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :edit, :show, :update]
   resources :courses do
+    resources :enrollments, only: [:new, :create]
     resources :lessons
   end
   resources :activities, only: [:index]

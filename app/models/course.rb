@@ -24,6 +24,10 @@ class Course < ApplicationRecord
     LEVELS.map{|level| [level, level]}
   end
 
+  def already_bought_by?(user)
+    self.enrollments.where(user_id: user.id).any?
+  end
+
   def to_s
     title
   end

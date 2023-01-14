@@ -13,7 +13,7 @@
         = course.level
       %p.card-text
         %i.fa-solid.fa-money-check-dollar
-        = number_to_currency(course.price) if course.price
+        = enroll_button(course)
     %div.card-footer.bg-transparent.border-success
       %p.card-text
         %small.text-muted
@@ -34,11 +34,11 @@
     = link_to course, class: 'btn btn-success ms-2 me-2' do
       %i.fa-regular.fa-eye
       Show
-    - if policy(course).edit?
+    - if current_user && policy(course).edit?
       = link_to edit_course_path(course), class: 'btn btn-warning ms-2 me-2' do
         %i.fa-regular.fa-pen-to-square
         Edit
-    - if policy(course).destroy?
+    - if current_user && policy(course).destroy?
       = link_to course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger ms-2 me-2' do
         %i.fa-regular.fa-trash-can
         Delete
